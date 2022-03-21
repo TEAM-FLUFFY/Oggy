@@ -1,4 +1,3 @@
-#Kanged From @TroJanZheX
 import asyncio
 import re
 import ast
@@ -398,13 +397,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝑨𝒅𝒅 𝑴𝒆 𝑻𝒐 𝑨 𝑪𝒉𝒂𝒕 𝑮𝒓𝒐𝒖𝒑', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Deploy', url='https://youtu.be/fyFKnde_Jz8')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('𝑷𝒂𝒊𝒅 𝑷𝒓𝒐𝒎𝒐𝒕𝒊𝒐𝒏', url=''https://t.me/KAAVAL_KAARAN_tg),
+            InlineKeyboardButton('𝑶𝒘𝒏𝒆𝒓', url='t.me/HAZARD_77')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
