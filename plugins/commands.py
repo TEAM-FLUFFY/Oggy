@@ -22,10 +22,10 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/MO_TECH_YT')
+                InlineKeyboardButton('𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/MO_TECH_YT')
             ],
             [
-                InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                InlineKeyboardButton('𝙷𝙴𝙻𝙿', url=f"https://t.me/{temp.U_NAME}?start=help"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -41,13 +41,10 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝑨𝒅𝒅 𝑴𝒆 𝑻𝒐 𝑨 𝑪𝒉𝒂𝒕 𝑮𝒓𝒐𝒖𝒑', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Deploy', url='https://youtu.be/fyFKnde_Jz8')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('𝑷𝒂𝒊𝒅 𝑷𝒓𝒐𝒎𝒐𝒕𝒊𝒐𝒏', url=''https://t.me/KAAVAL_KAARAN_tg),
+            InlineKeyboardButton('𝑶𝒘𝒏𝒆𝒓', url='t.me/HAZARD_77')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -61,18 +58,18 @@ async def start(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
         except ChatAdminRequired:
-            logger.error("Make sure Bot is admin in Forcesub channel")
+            logger.error("""ഹലോ മച്ചാനെ ഞങ്ങളുടെ മെയിൻ ചാനലിൽ നിങ്ങൾ ചേർന്നതായി കാണുന്നില്ല വേഗം ഞങ്ങളുടെ ചാനലിൽ ചേരുക എന്നിട്ട് ഒന്നുടെ 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳 ഞെക്കുക""")
             return
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "ഇതിൽ ചേരു", url=invite_link.invite_link
                 )
             ]
         ]
 
         if message.command[1] != "subscribe":
-            btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"checksub#{message.command[1]}")])
+            btn.append([InlineKeyboardButton("𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳", callback_data=f"checksub#{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text="**Please Join My Updates Channel to use this Bot!**",
@@ -82,13 +79,10 @@ async def start(client, message):
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝑨𝒅𝒅 𝑴𝒆 𝑻𝒐 𝑨 𝑪𝒉𝒂𝒕 𝑮𝒓𝒐𝒖𝒑', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Deploy', url='https://youtu.be/fyFKnde_Jz8')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('𝑷𝒂𝒊𝒅 𝑷𝒓𝒐𝒎𝒐𝒕𝒊𝒐𝒏', url=''https://t.me/KAAVAL_KAARAN_tg),
+            InlineKeyboardButton('𝑶𝒘𝒏𝒆𝒓', url='t.me/HAZARD_77')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -100,7 +94,7 @@ async def start(client, message):
         return
     file_id = message.command[1]
     if file_id.split("-", 1)[0] == "BATCH":
-        sts = await message.reply("Please wait")
+        sts = await message.reply("𝙿𝙻𝙴𝙰𝚂𝙴 𝚆𝙰𝙸𝚃 𝙲𝙷𝚄𝙽𝙺𝙴❤️")
         file_id = file_id.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
